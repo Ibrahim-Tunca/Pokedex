@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".gitignore/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="./style/card.css">
+    <link rel="stylesheet" href="./style/header.css">
+    
+
+    <script src="./script.js"></script>
+    <script src="./script/template.js"></script>
+
+    
+    <title>Pokedex</title>
+</head>
+<body onload="render()">
+    
+    <header>
+        <img class="pokeballIcon" src="./.gitignore/img/pokeball.png" alt="pokeball.png">
+        <h1  class="whithe-font">Pokedex</h2>
+        <div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search Pokemon" aria-label="Recipient’s username" aria-describedby="button-addon2">
+                <button class="btn btn-danger " type="button" id="button-addon2"><img class="loup-icon" src="./.gitignore/img/loupe.png" alt="lupe.png"></button>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="card-order" id="content">
+
+        </div>
+    </section>
+
+
+</body>
+</html>

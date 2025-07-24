@@ -1,0 +1,21 @@
+header{
+    background-color: #f5e872;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    text-align: center;
+}
+
+.pokeballIcon{
+    width: 85px;
+    height: 63px;
+}
+
+.loup-icon{
+    width: 21px;
+    height: 21px;
+    object-fit: cover;
+}
