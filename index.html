@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=".gitignore/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="./style/colors.css">
     <link rel="stylesheet" href="./style/card.css">
     <link rel="stylesheet" href="./style/header.css">
+    <link rel="stylesheet" href="./style/overlay.css">
     
 
     <script src="./script.js"></script>
@@ -30,6 +31,12 @@
     </header>
 
     <section>
+        <div onclick="openOverlay()"  class="overlay d_none" id="overlayID">
+           
+        </div>
+        <div class="d_none" id="overlayContent">
+
+           </div>
         <div class="card-order" id="content">
 
         </div>

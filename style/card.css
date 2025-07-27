@@ -1,3 +1,9 @@
+.card{
+    margin: 20px;
+    border-radius: 5px;
+    z-index: 0;
+}
+
 .card-order{
     display: flex;
     justify-content: center;
@@ -16,10 +22,7 @@
     border-top-right-radius: 5px;
 }
 
-.card{
-    margin: 20px;
-    border-radius: 5px;
-}
+
 
 .card-body{
     background-color: #f5e872;
@@ -44,3 +47,4 @@
     margin-right: 4px;
 
 }
+

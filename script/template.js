@@ -1,10 +1,11 @@
 function getPokeValues(inputPokeTypeName, inputPokeID, inputPokeName, inputPokeSprite, inputDivID){
         return  `
 
-                        <div class="card ${inputPokeTypeName}" style="width: 18rem;">
+                        <div onclick="renderOverlay('${inputPokeTypeName}', ${inputPokeID}, '${inputPokeName}', '${inputPokeSprite}', ${inputDivID})" class="card ${inputPokeTypeName}" style="width: 18rem;">
                             <h2 class="card-title">${inputPokeID}#  ${makeFirstLetterBig(inputPokeName)}</h2>
                             <img src="${inputPokeSprite}"  class="card-img-top" alt="pokemon-image">
-                            <div id="${inputDivID}" class="card-body"> 
+                            <div id="${inputDivID}" class="card-body">
+                            </div>
                         </div>
 
                 `
