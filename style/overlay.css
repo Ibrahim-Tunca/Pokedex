@@ -26,20 +26,22 @@
 }
 
 .card-body-extended {
-    height: 200px;
+    height: 60px;
+    
 }
 
 .button-order{
     width: 100%;
-    top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
 
     display: flex;
     justify-content:center;
     align-items:flex-start;
     cursor: pointer;
-    flex-direction: row;
 }
 
 .button-shape{
     width: 100%;
+
 }
