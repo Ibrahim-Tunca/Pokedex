@@ -29,18 +29,19 @@ function getOverlayContent(inputPokeID, inputPokeName, inputPokeTypeArray, input
                                     </div>
                                     </div>
                                     <div class="button-order">
-                                        <button class="btn btn-primary button-shape">main</button>
-                                        <button class="btn btn-primary button-shape">stats</button>
-                                        <button class="btn btn-primary button-shape">evo chain</button>
+                                        <button onclick="getOverlayMainValues(${inputPokeID})" class="btn btn-primary button-shape">main</button>
+                                        <button onclick="getOverlayStats(${inputPokeID})" class="btn btn-primary button-shape">stats</button>
+                                        <button onclick="getOverlayEvos(${inputPokeID})" class="btn btn-primary button-shape">evo chain</button>
                                     </div>
+                                    <div id="buttonOutputID">
+
+                                    </div>
+                                
                                 </div>
-    
+                                        
                             `
 }
 
-function getPokeMain(){
-
-}
 
 
 function getTypeEmblemHTML(inputType){
@@ -84,3 +85,88 @@ function getTypeEmblemHTML(inputType){
     }
 
 }
+
+function getMainValues(inputHeight, inputWeight, inputExpirience, inputAbilities){
+    return `<table class="table table-striped">
+                                <tr>                    
+                                        <td>height:</td>
+                                        <td>${inputHeight}</td>
+                                </tr>
+                                <tr>                    
+                                        <td>weight:</td>
+                                        <td>${inputWeight}</td>
+                                </tr>
+                                <tr>                    
+                                        <td>base exp.</td>
+                                        <td>${inputExpirience}</td>
+                                </tr>
+                                <tr>                    
+                                        <td>abilities</td>
+                                        <td>${checkIfMoreThanOneAbility(inputAbilities)}</td>
+                                </tr>
+                            </table>`
+}
+
+
+function getStats(inputHP, inputAttack, inputDefense, InputSpecialAttack, inputSpecialDefense, inputSpeed){
+    return `<div class="font-colour-white stats-div">
+
+            <div>
+                <i>HP</i>
+                <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="${inputHP}" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-warning" style="width: ${inputHP}%">
+                        ${inputHP}
+                    </div>
+                 </div>
+            </div>
+
+            <div>
+                <i>attack</i>
+                <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="${inputAttack}" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-warning" style="width: ${inputAttack}%">
+                        ${inputAttack}
+                    </div>
+                 </div>
+            </div>
+
+            <div>
+                <i>defense</i>
+                <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="${inputDefense}" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-warning" style="width: ${inputDefense}%">
+                        ${inputDefense}
+                    </div>
+                 </div>
+            </div>
+
+            <div>
+                <i>special Attack</i>
+                <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="${InputSpecialAttack}" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-warning" style="width: ${InputSpecialAttack}%">
+                        ${InputSpecialAttack}
+                    </div>
+                 </div>
+            </div>
+
+            <div>
+                <i>special Defense</i>
+                <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="${inputSpecialDefense}" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-warning" style="width: ${inputSpecialDefense}%">
+                        ${inputSpecialDefense}
+                    </div>
+                 </div>
+            </div>
+
+            <div>
+                <i>speed</i>
+                <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="${inputSpeed}" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-warning" style="width: ${inputSpeed}%">
+                        ${inputSpeed}
+                    </div>
+                 </div>
+            </div>
+    
+    
+            </div>
+    `
+}
+

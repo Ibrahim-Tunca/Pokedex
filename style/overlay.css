@@ -45,3 +45,20 @@
     width: 100%;
 
 }
+
+.font-colour-white{
+    color: white;
+}
+
+.main-div{
+    background-color: rgb(212, 81, 81);
+}
+
+.stats-div{
+    padding: 15px;
+    background-color: rgb(212, 81, 81);
+}
+
+.table {
+    margin: 0;
+}
