@@ -79,6 +79,51 @@ function getOverlayStats(inputID){
     let evoResponse = await fetch(speciesData.evolution_chain.url);
     let evoData = await evoResponse.json();
 
-    console.log(evoData.chain);
+    //console.log(evoData.chain.species);
+    //console.log(evoData.chain.evolves_to[0].species);
+    //console.log(evoData.chain.evolves_to[0].evolves_to[0].species);
+
     
+    searchPokeId(evoData.chain.species.name)
+    searchPokeId(evoData.chain.evolves_to[0].species.name)
+    searchPokeId(evoData.chain.evolves_to[0].evolves_to[0].species.name)
+
+
+    return `<div>
+               <p></p>
+               <p></p>
+               <p></p>
+            </div>` 
+ }
+
+ function searchPokeId(inputName){
+   const pokeAPI = window.pokemons;
+   let actualID = 0;
+
+   for(i = 1; i < 10; i++){
+      if(inputName == pokeAPI[i].name){
+
+               //console.log("gefunden");
+               actualID += i;
+         
+      }else { 
+
+               //console.log("ID nicht gefunden");
+            }
+   }
+
+   console.log("Die aktuelle ID ist: " + actualID);
+   
+   getPokeChain(actualID);
+   
+ }
+
+ function getPokeChain(inputID){
+   const pokeObject = window.pokemons[inputID];
+   let contentRef = document.getElementById("buttonOutputID"); 
+
+   contentRef.innerHTML += `    <div>
+                  <a>${pokeObject.name}</a>
+                  <img src="${pokeObject.sprites.front_default}">
+               </div>`
  }
