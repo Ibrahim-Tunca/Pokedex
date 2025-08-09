@@ -26,6 +26,8 @@ async function loadAndRenderPokemons(){
         let responsePokeValues = await fetch(pickUrl + pokeID);
         let responsePokeValuesJson = await responsePokeValues.json();
 
+        
+
         window.pokemons[responsePokeValuesJson.id] = responsePokeValuesJson;
 
         renderAllPokemons(pokeID)

@@ -62,3 +62,19 @@
 .table {
     margin: 0;
 }
+
+
+.margin-null{
+    margin: 0;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.evoChain-card-order{
+    background-color: #f5e872;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
