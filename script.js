@@ -17,20 +17,18 @@ function makeFirstLetterBig(inputString){
 }
 
 async function loadAndRenderPokemons(){
-
+    
     for(index = 0; index < 9; index++){
 
-        //let responseBASE = await fetch(BASE_URL + "json.js");
-        //let responseBASEToJson = await responseBASE.json();
-
+        await new Promise(resolve => setTimeout(resolve, 1000));
         let responsePokeValues = await fetch(pickUrl + pokeID);
         let responsePokeValuesJson = await responsePokeValues.json();
 
-        
-
         window.pokemons[responsePokeValuesJson.id] = responsePokeValuesJson;
 
-        renderAllPokemons(pokeID)
+        showLoadingSpinner();
+        renderAllPokemons(pokeID);
+        hideLoadingSpinner();
 
         pokeID++;
         typeEmblemID = typeEmblemID.slice(0, -1) + pokeID;
@@ -52,10 +50,41 @@ function checkIfMoreThanOneType(inputArray){
 
 function renderAllPokemons(inputPokeID){
     const pokeObject = window.pokemons[inputPokeID];
-
     let contentRef = document.getElementById("content");
-        contentRef.innerHTML += getPokeValues(pokeObject.id, pokeObject.name, pokeObject.types, pokeObject.types[0].type.name, pokeObject.sprites.front_default);
 
+   
+   
+    
+        contentRef.innerHTML += getPokeValues(pokeObject.id, pokeObject.name, pokeObject.types, pokeObject.types[0].type.name, pokeObject.sprites.front_default);
+       
 
 }
 
+function hideLoadingSpinner() {
+    document.getElementById('loading').style.display = 'none';
+}
+
+function showLoadingSpinner() {
+    contentRef = document.getElementById('loading').style.display = 'flex';
+}
+   
+
+
+
+function filterAndRenderPokemons(){
+    document.querySelector('input[type="text"]').addEventListener('input', function(e) {
+    let search = e.target.value.toLowerCase();
+    let filtered = window.pokemons.filter (poke => poke && poke.name.toLowerCase().includes(search));
+    let contentRef = document.getElementById("content");
+    contentRef.innerHTML = "";
+    filtered.forEach(poke => {
+        contentRef.innerHTML += getPokeValues(
+            poke.id,
+            poke.name,
+            poke.types,
+            poke.types[0].type.name,
+            poke.sprites.front_default
+            );
+        });
+    });
+}

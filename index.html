@@ -23,15 +23,17 @@
     <title>Pokedex</title>
 </head>
 <body onload="render()">
+
+    <div id="loading">
+        <img class="loading-spinner" src="./.gitignore/img/gifs/spinningPokeBall.gif" alt="Loading...">
+    </div>
     
     <header>
         <img class="pokeballIcon" src="./.gitignore/img/pokeball.png" alt="pokeball.png">
         <h1  class="whithe-font">Pokedex</h2>
         <div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search Pokemon" aria-label="Recipient’s username" aria-describedby="button-addon2">
-                <button class="btn btn-danger " type="button" id="button-addon2"><img class="loup-icon" src="./.gitignore/img/loupe.png" alt="lupe.png"></button>
-            </div>
+                <input type="text" id="searchBarID" class="form-control" onkeyup="filterAndRenderPokemons()" placeholder="Search Pokemon" aria-label="Recipient’s username" aria-describedby="button-addon2">
         </div>
     </header>
 
