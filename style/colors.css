@@ -15,23 +15,23 @@
 }
 
 .electric{
-    background-color: lightyellow;
+    background-color:yellow;
 }
 
 .bug{
     background-color: rgb(103, 151, 103);
 }
 
-.fight{
-    background-color: rgb(255, 88, 138);
+.fighting{
+    background-color: rgb(139, 42, 42);
 }
 
 .ice{
-    background-color: lightcyan;
+    background-color: rgb(102, 172, 212);
 }
 
 .psychic{
-    background-color: white;
+    background-color: rgb(216, 86, 188);
 }
 
 .dark{
@@ -42,7 +42,10 @@
 }
 
 .ghost{
-    background-color: rgba(255, 255, 255, 0.514);
+    background-color: rgb(100, 49, 66);
+}
+.fairy{
+    background-color: rgb(187, 120, 207);
 }
 
 .steel{
@@ -54,11 +57,11 @@
 }
 
 .normal{
-    background-color: white;
+    background-color: rgb(38, 235, 88);
 }
 
 .flying{
-    background-color: lightblue;
+    background-color: rgb(128, 222, 253);
 }
 
 .ground{

@@ -58,8 +58,8 @@ function getTypeEmblemHTML(inputType){
             return `<img class="typeEmblemIcon electric emblem_brightness" src=".gitignore/img/icons/poke-type/electric.png" alt="electric-type-icon">`;
         case "bug":
             return `<img class="typeEmblemIcon bug emblem_brightness" src=".gitignore/img/icons/poke-type/bug.png" alt="bug-type-icon">`;
-        case "fight":
-            return `<img class="typeEmblemIcon fight emblem_brightness" src=".gitignore/img/icons/poke-type/fight.png" alt="fight-type-icon">`;
+        case "fighting":
+            return `<img class="typeEmblemIcon fighting emblem_brightness" src=".gitignore/img/icons/poke-type/fight.png" alt="fight-type-icon">`;
         case "ice":
             return `<img class="typeEmblemIcon ice emblem_brightness" src=".gitignore/img/icons/poke-type/ice.png" alt="ice-type-icon">`;
         case "psychic":
@@ -70,6 +70,8 @@ function getTypeEmblemHTML(inputType){
             return `<img class="typeEmblemIcon poison emblem_brightness" src=".gitignore/img/icons/poke-type/poison.png" alt="poison-type-icon">`;
         case "ghost":
             return `<img class="typeEmblemIcon ghost emblem_brightness" src=".gitignore/img/icons/poke-type/ghost.png" alt="ghost-type-icon">`;
+        case "fairy":
+            return `<img class="typeEmblemIcon fairy emblem_brightness" src=".gitignore/img/icons/poke-type/fairy.png" alt="ground-type-icon">`;
         case "steel":
             return `<img class="typeEmblemIcon steel emblem_brightness" src=".gitignore/img/icons/poke-type/steel.png" alt="steel-type-icon">`;
         case "dragon":

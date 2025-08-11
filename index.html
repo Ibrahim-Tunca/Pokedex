@@ -14,6 +14,7 @@
 
     <script src="./script.js"></script>
     <script src="./script/template.js"></script>
+    <script src="./script/special-function.js"></script>
     <script src="./script/overlay.js"></script>
     <script src="./script/overlay-main.js"></script>
     <script src="./script/overlay-stats.js"></script>
@@ -24,20 +25,23 @@
 </head>
 <body onload="render()">
 
-    <div id="loading">
-        <img class="loading-spinner" src="./.gitignore/img/gifs/spinningPokeBall.gif" alt="Loading...">
-    </div>
+    
     
     <header>
         <img class="pokeballIcon" src="./.gitignore/img/pokeball.png" alt="pokeball.png">
-        <h1  class="whithe-font">Pokedex</h2>
+
         <div>
             <div class="input-group mb-3">
                 <input type="text" id="searchBarID" class="form-control" onkeyup="filterAndRenderPokemons()" placeholder="Search Pokemon" aria-label="Recipient’s username" aria-describedby="button-addon2">
         </div>
     </header>
 
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <h1  class="whithe-font">Pokedex</h2>
+    </div>
+
     <section>
+        
         <div onclick="openOverlay()"  class="overlay d_none" id="overlayID">
            
         </div>
@@ -46,6 +50,17 @@
            </div>
         <div class="card-order" id="content">
 
+        </div>
+    </section>
+
+    <div id="loading">
+        <img class="loading-spinner" src="./.gitignore/img/gifs/spinningPokeBall.gif" alt="Loading...">
+    </div>
+
+
+    <section>
+        <div  class="more-pokemon-button">
+            <button id="morePokemonID" onclick="renderMorePokemons()" class="btn btn-secondary">mehr Pokemon</button>
         </div>
     </section>
 
