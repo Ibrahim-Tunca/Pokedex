@@ -9,6 +9,7 @@ function getOverlayMainValues(inputID){
     let contentRef = document.getElementById("buttonOutputID");
     
     contentRef.innerHTML = getMainValues(pokeHeight, pokeWeight, pokeExpirience, pokeAbilities);
+    overlayButtonCase = 1;
 }
 
 function checkIfMoreThanOneAbility(inputArray){

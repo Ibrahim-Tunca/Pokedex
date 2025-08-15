@@ -9,6 +9,8 @@ function getOverlayStats(inputID){
     pokeSpeed = pokeObject.stats[5].base_stat;
 
     let contentRef = document.getElementById("buttonOutputID");
+    contentRef.classList.remove("evoChain-card-order");
 
     contentRef.innerHTML = getStats(pokeHP, pokeAttack, pokeDefense, pokeSpecialAttack, pokeSpecialDefense, pokeSpeed);
+    overlayButtonCase = 2;
 }

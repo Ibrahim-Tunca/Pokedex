@@ -10,23 +10,22 @@
 }
 
 .centered-overlay-content {
-    position: absolute;
-    top: 50%;         
-    left: 50%;       
-    transform: translate(-50%, -50%); 
-    z-index: 3;      
-
-    
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 28rem;
 }
 
 .card-title-extended {
     font-size: 48px;
-    height: 72px;
 }
 
 .card-body-extended {
-    height: 60px;
+    height: 50px;
     
 }
 

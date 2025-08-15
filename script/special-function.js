@@ -41,3 +41,27 @@ function filterAndRenderPokemons(){
         });
     });
 }
+
+async function renderMorePokemons(){
+   
+    hideMorePokemonsButton()
+
+    actualCountOffHowManyPokemonsAreBeenShownOnThePage += 9;
+
+    showLoadingSpinner();
+    await loadAndRenderPokemons();
+    hideLoadingSpinner();
+
+    showMorePokemonsButton()
+}
+
+function hideMorePokemonsButton(){
+    let contentRef = document.getElementById("morePokemonID");
+    contentRef.classList.add("d_none");
+}
+
+function showMorePokemonsButton(){
+    let contentRef = document.getElementById("morePokemonID");
+    contentRef.classList.remove("d_none");
+}
+

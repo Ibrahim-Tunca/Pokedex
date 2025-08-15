@@ -18,7 +18,12 @@ function getPokeValues(inputPokeID, inputPokeName, inputPokeTypeArray, inputPoke
 
 function getOverlayContent(inputPokeID, inputPokeName, inputPokeTypeArray, inputPokeTypeName, inputPokeSprite){
     return `
-                                <div class="card ${inputPokeTypeName} centered-overlay-content" style="width: 35rem;">
+                            
+
+                                <div class="card ${inputPokeTypeName} centered-overlay-content">
+
+                                
+
                                     <h2 class="card-title card-title-extended">${inputPokeID}#  ${makeFirstLetterBig(inputPokeName)}</h2>
                                     <img src="${inputPokeSprite}"  class="card-img-top" alt="pokemon-image">
                                     
@@ -28,7 +33,7 @@ function getOverlayContent(inputPokeID, inputPokeName, inputPokeTypeArray, input
                                         ${checkIfMoreThanOneType(inputPokeTypeArray)}
                                     </div>
                                     </div>
-                                    <div class="button-order">
+                                    <div onload="getOverlayMainValues(${inputPokeID})" class="button-order">
                                         <button onclick="getOverlayMainValues(${inputPokeID})" class="btn btn-primary button-shape">main</button>
                                         <button onclick="getOverlayStats(${inputPokeID})" class="btn btn-primary button-shape">stats</button>
                                         <button onclick="getOverlayEvos(${inputPokeID})" class="btn btn-primary button-shape">evo chain</button>
@@ -37,7 +42,15 @@ function getOverlayContent(inputPokeID, inputPokeName, inputPokeTypeArray, input
 
                                     </div>
                                 
+                                <div class="button-order">
+                                    <!-- must use "&lt;" instead of regular "<<" because the char are also use for HTML-Tags and didnt work here-->
+                                    <button onclick="showPrevPokemon(${inputPokeID})" class="btn btn-primary width-100">&lt;&lt;prev</button>
+                                    <button onclick="showNextPokemon(${inputPokeID})" class="btn btn-primary width-100" >next>></button>
                                 </div>
+
+                                </div>
+
+                            
                                         
                             `
 }
