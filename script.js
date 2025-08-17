@@ -11,6 +11,8 @@ let overlayButtonCase = 1;
 let actualCountOffHowManyPokemonsAreBeenShownOnThePage = 9;
 
 window.pokemons = [];
+//this is only reqired for the filter bar function
+let allPokemonNames = [];
 
 
 function render(){
@@ -29,16 +31,17 @@ async function loadAndRenderPokemons(){
         let responsePokeValues = await fetch(pickUrl + pokeID);
         let responsePokeValuesJson = await responsePokeValues.json();
         window.pokemons[responsePokeValuesJson.id] = responsePokeValuesJson;
-
+        //this is only required for the Evochainfunction
         let speciesResponse = await fetch(responsePokeValuesJson.species.url);
         let speciesData = await speciesResponse.json();
         responsePokeValuesJson.speciesData = speciesData;
-
         let evoResponse = await fetch(speciesData.evolution_chain.url);
         let evoData = await evoResponse.json();
         responsePokeValuesJson.evoData = evoData;
-        
-
+        //this is only reqired for the filter bar function
+        let response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0");
+        let data = await response.json();
+        allPokemonNames = data.results.map(p => p.name);
         
 
 

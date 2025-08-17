@@ -8,23 +8,14 @@ function getOverlayEvos(inputID){
 
     contentRef.innerHTML = "";
 
-    switch(chain.evolves_to.length){
-        case 1:
-          searchPokeId(chain.species.name)
-          break;
-        case 2:
-          searchPokeId(chain.species.name)
-          searchPokeId(chain.evolves_to[0].species.name)
-          break;
-        case 3:
-          searchPokeId(chain.species.name)
-          searchPokeId(chain.evolves_to[0].species.name)
-          searchPokeId(chain.evolves_to[0].evolves_to[0].species.name)
-          break;
-        default:
-          return
+    while (chain) {
+    searchPokeId(chain.species.name);
+    if (chain.evolves_to && chain.evolves_to.length > 0) {
+        chain = chain.evolves_to[0];
+    } else {
+        chain = null;
     }
-
+  }
 
     overlayButtonCase = 3;
  }
