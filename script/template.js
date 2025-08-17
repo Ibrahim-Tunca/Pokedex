@@ -34,9 +34,9 @@ function getOverlayContent(inputPokeID, inputPokeName, inputPokeTypeArray, input
                                     </div>
                                     </div>
                                     <div onload="getOverlayMainValues(${inputPokeID})" class="button-order">
-                                        <button onclick="getOverlayMainValues(${inputPokeID})" class="btn btn-primary button-shape">main</button>
-                                        <button onclick="getOverlayStats(${inputPokeID})" class="btn btn-primary button-shape">stats</button>
-                                        <button onclick="getOverlayEvos(${inputPokeID})" class="btn btn-primary button-shape">evo chain</button>
+                                        <button onclick="getOverlayMainValues(${inputPokeID})" class="btn btn-primary width-100">main</button>
+                                        <button onclick="getOverlayStats(${inputPokeID})" class="btn btn-primary width-100">stats</button>
+                                        <button onclick="getOverlayEvos(${inputPokeID})" class="btn btn-primary width-100">evo chain</button>
                                     </div>
                                     <div id="buttonOutputID">
 
