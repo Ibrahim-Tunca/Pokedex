@@ -20,32 +20,33 @@ function getOverlayEvos(inputID){
     overlayButtonCase = 3;
  }
 
- function searchPokeId(inputName){
-   const pokeAPI = window.pokemons;
-   let actualID = null;
+async function searchPokeId(inputName){
+    const pokeAPI = window.pokemons;
+    let actualID = null;
 
-   for(i = 1; i < actualCountOffHowManyPokemonsAreBeenShownOnThePage; i++){
-
-      if(pokeAPI[i] && inputName == pokeAPI[i].name){
-               actualID = i;
-               break;
-      }
-
-   }
-
- if (actualID !== null) {
-        getPokeChain(actualID);
+    for(let i = 1; i < pokeAPI.length; i++){
+        if(pokeAPI[i] && inputName == pokeAPI[i].name){
+            actualID = i;
+            break;
+        }
     }
 
+    if (actualID === null) {
+        let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${inputName}`);
+        let pokeObject = await response.json();
+        window.pokemons[pokeObject.id] = pokeObject;
+        actualID = pokeObject.id;
+    }
 
- }
+    if (actualID !== null) {
+        getPokeChain(actualID);
+    }
+}
 
  function getPokeChain(inputID){
    const pokeObject = window.pokemons[inputID];
    if (!pokeObject) {
-        // Optional: Fehlermeldung anzeigen oder einfach nichts tun
-        console.warn("Pokémon mit ID", inputID, "nicht gefunden!");
-        return;
+
     }
    let contentRef = document.getElementById("buttonOutputID"); 
    contentRef.classList.add("evoChain-card-order");

@@ -40,13 +40,7 @@ function filterAndRenderPokemons(){
                     pokeObject = await response.json();
                     window.pokemons[pokeObject.id] = pokeObject;
                 }
-                contentRef.innerHTML += getPokeValues(
-                    pokeObject.id,
-                    pokeObject.name,
-                    pokeObject.types,
-                    pokeObject.types[0].type.name,
-                    pokeObject.sprites.front_default
-                );
+                contentRef.innerHTML += getPokeValues(pokeObject.id, pokeObject.name, pokeObject.types, pokeObject.types[0].type.name, pokeObject.sprites.front_default);
             }
         }
     });
