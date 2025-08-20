@@ -7,13 +7,13 @@ function hideLoadingSpinner() {
     document.getElementById('loading').style.display = 'none';
 }
 
+
 function showLoadingSpinner() {
     contentRef = document.getElementById('loading').style.display = 'flex';
 }
    
 
 function checkIfMoreThanOneType(inputArray){
-  
      let html = "";
            if(inputArray.length > 1){
                html += getTypeEmblemHTML(inputArray[1].type.name);
@@ -24,6 +24,7 @@ function checkIfMoreThanOneType(inputArray){
     return html;
 }
 
+
 function filterAndRenderPokemons(){
     document.querySelector('input[type="text"]').addEventListener('input', async function(e) {
         if (e.target.value.length > 2) {
@@ -31,8 +32,6 @@ function filterAndRenderPokemons(){
             let filteredNames = allPokemonNames.filter(name => name.includes(search));
             let contentRef = document.getElementById("content");
             contentRef.innerHTML = "";
-
-
             for (let name of filteredNames) {
                 let pokeObject = window.pokemons.find(p => p && p.name === name);
                 if (!pokeObject) {
@@ -46,16 +45,16 @@ function filterAndRenderPokemons(){
     });
 }
 
-async function renderMorePokemons(){
-   
-    hideMorePokemonsButton()
 
+async function renderMorePokemons(){
+    hideMorePokemonsButton()
     actualCountOffHowManyPokemonsAreBeenShownOnThePage += 9;
+    console.log("actualCountOffHowManyPokemonsAreBeenShownOnThePage: " + actualCountOffHowManyPokemonsAreBeenShownOnThePage);
+    
 
     showLoadingSpinner();
     await loadAndRenderPokemons();
     hideLoadingSpinner();
-
     showMorePokemonsButton()
 }
 
@@ -64,8 +63,29 @@ function hideMorePokemonsButton(){
     contentRef.classList.add("d_none");
 }
 
+
 function showMorePokemonsButton(){
     let contentRef = document.getElementById("morePokemonID");
     contentRef.classList.remove("d_none");
+}
+
+
+ function showNextPokemon(inputPokeID){
+    inputPokeID++;
+    if(inputPokeID > actualCountOffHowManyPokemonsAreBeenShownOnThePage){
+        inputPokeID = actualCountOffHowManyPokemonsAreBeenShownOnThePage;
+    }
+    toggleOverlay();
+    renderOverlay(inputPokeID)    
+}
+
+
+ function showPrevPokemon(inputPokeID){
+    inputPokeID--;
+    if(inputPokeID < 1){
+        inputPokeID = 1;
+    }
+    toggleOverlay();
+    renderOverlay(inputPokeID)
 }
 

@@ -16,6 +16,7 @@ function getPokeValues(inputPokeID, inputPokeName, inputPokeTypeArray, inputPoke
 
 }
 
+
 function getOverlayContent(inputPokeID, inputPokeName, inputPokeTypeArray, inputPokeTypeName, inputPokeSprite){
     return `
                             
@@ -34,9 +35,9 @@ function getOverlayContent(inputPokeID, inputPokeName, inputPokeTypeArray, input
                                     </div>
                                     </div>
                                     <div onload="getOverlayMainValues(${inputPokeID})" class="button-order">
-                                        <button onclick="getOverlayMainValues(${inputPokeID})" class="btn btn-primary width-100">main</button>
-                                        <button onclick="getOverlayStats(${inputPokeID})" class="btn btn-primary width-100">stats</button>
-                                        <button onclick="getOverlayEvos(${inputPokeID})" class="btn btn-primary width-100">evo chain</button>
+                                        <button onclick="getOverlayMainValues(${inputPokeID})" class="btn btn-light width-100">main</button>
+                                        <button onclick="getOverlayStats(${inputPokeID})" class="btn btn-danger width-100">stats</button>
+                                        <button onclick="getOverlayEvos(${inputPokeID})" class="btn btn-warning width-100">evo chain</button>
                                     </div>
                                     <div id="buttonOutputID">
 
@@ -44,8 +45,8 @@ function getOverlayContent(inputPokeID, inputPokeName, inputPokeTypeArray, input
                                 
                                 <div class="button-order">
                                     <!-- must use "&lt;" instead of regular "<<" because the char are also use for HTML-Tags and didnt work here-->
-                                    <button onclick="showPrevPokemon(${inputPokeID})" class="btn btn-primary width-100">&lt;&lt;prev</button>
-                                    <button onclick="showNextPokemon(${inputPokeID})" class="btn btn-primary width-100" >next>></button>
+                                    <button onclick="showPrevPokemon(${inputPokeID})" class="btn btn-light width-100">&lt;&lt;prev</button>
+                                    <button onclick="showNextPokemon(${inputPokeID})" class="btn btn-light width-100" >next>></button>
                                 </div>
 
                                 </div>
@@ -54,7 +55,6 @@ function getOverlayContent(inputPokeID, inputPokeName, inputPokeTypeArray, input
                                         
                             `
 }
-
 
 
 function getTypeEmblemHTML(inputType){
@@ -100,6 +100,7 @@ function getTypeEmblemHTML(inputType){
     }
 
 }
+
 
 function getMainValues(inputHeight, inputWeight, inputExpirience, inputAbilities){
     return `<table class="table table-striped">
@@ -185,3 +186,16 @@ function getStats(inputHP, inputAttack, inputDefense, InputSpecialAttack, inputS
     `
 }
 
+
+ function  getPokeChainTemplate(inputType, inputName, inputIMG){
+    return ` 
+           
+              <div>
+                  <div class="card ${inputType}" style="width: 7rem;">
+                  <h5 class="card-title margin-null">${inputName}</h5>
+                  <img src="${inputIMG}" class="card-img-top" alt="poke-pic.png">
+                  </div>
+              </div>
+
+    `
+ }

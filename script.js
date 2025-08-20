@@ -22,10 +22,15 @@ function render(){
 
 async function loadAndRenderPokemons(){
 
-    hideMorePokemonsButton()
+    hideMorePokemonsButton();
+    let contentRef = document.getElementById("content");
+
 
     await new Promise(resolve => setTimeout(resolve, 1000));
 
+    pokeID = 1;
+
+    contentRef.innerHTML = "";
     for(index = 0; index < actualCountOffHowManyPokemonsAreBeenShownOnThePage; index++){
 
         let responsePokeValues = await fetch(pickUrl + pokeID);
@@ -56,7 +61,6 @@ async function loadAndRenderPokemons(){
     }      
     showMorePokemonsButton()
 }
-
 
 
 function renderAllPokemons(inputPokeID){

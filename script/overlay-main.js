@@ -4,13 +4,13 @@ function getOverlayMainValues(inputID){
     pokeWeight = pokeObject.weight;
     pokeExpirience = pokeObject.base_experience;
     pokeAbilities = pokeObject.abilities;
-    
 
     let contentRef = document.getElementById("buttonOutputID");
     
     contentRef.innerHTML = getMainValues(pokeHeight, pokeWeight, pokeExpirience, pokeAbilities);
     overlayButtonCase = 1;
 }
+
 
 function checkIfMoreThanOneAbility(inputArray){
      let html = "";
@@ -26,8 +26,7 @@ function checkIfMoreThanOneAbility(inputArray){
             if(inputArray.length > 3){
                html += inputArray[3].ability.name;
             }
-
-            //return is only to get an separator after every string
+            //This return is only to get an separator after every string
     return inputArray.map(a => a.ability.name).join(', ');
 }
 
