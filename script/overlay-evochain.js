@@ -1,15 +1,32 @@
-function getOverlayEvos(inputID){
+async function fetchEvoChain(pokeObject) {
+
+    let speciesResponse = await fetch(pokeObject.species.url);
+    let speciesData = await speciesResponse.json();
+    pokeObject.speciesData = speciesData;
+
+    let evoResponse = await fetch(speciesData.evolution_chain.url);
+    let evoData = await evoResponse.json();
+    pokeObject.evoData = evoData;
+
+    return pokeObject;
+}
+
+
+async function getOverlayEvos(inputID){  
     const pokeObject = window.pokemons[inputID];
     const evoData = pokeObject.evoData;
-    contentRef = document.getElementById("buttonOutputID");
+    let contentRef = document.getElementById("buttonOutputID");
+    
+
     let chain = evoData.chain;
     contentRef.innerHTML = "";
-    loadUnloadedPokemons(chain)
-    overlayButtonCase = 3;
+    loadUnloadedPokemons(chain);
+    
  }
 
 
 function loadUnloadedPokemons(inputChain){
+    
     while (inputChain) {
         searchPokeId(inputChain.species.name);
         if (inputChain.evolves_to && inputChain.evolves_to.length > 0) {
@@ -39,6 +56,7 @@ async function searchPokeId(inputName){
     if(actualID !== null) {
         getPokeChain(actualID);
     }
+    overlayButtonCase = 3;
 }
 
 

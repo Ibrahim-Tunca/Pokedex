@@ -1,5 +1,6 @@
-function renderOverlay(inputPokeID){
+async function renderOverlay(inputPokeID){
     const pokeObject = window.pokemons[inputPokeID];
+    await fetchEvoChain(pokeObject);
 
     let contentRef = document.getElementById("overlayContent");
     contentRef.innerHTML =  getOverlayContent(inputPokeID, pokeObject.name, pokeObject.types, pokeObject.types[0].type.name, pokeObject.sprites.front_default);

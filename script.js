@@ -20,30 +20,6 @@ function render(){
 }
 
 
-async function fetchAndEnrichPokemonData(pokeID) {
-    let responsePokeValues = await fetch(pickUrl + pokeID);
-    let responsePokeValuesJson = await responsePokeValues.json();
-    window.pokemons[responsePokeValuesJson.id] = responsePokeValuesJson;
-
-    // Evochain
-    let speciesResponse = await fetch(responsePokeValuesJson.species.url);
-    let speciesData = await speciesResponse.json();
-    responsePokeValuesJson.speciesData = speciesData;
-
-    let evoResponse = await fetch(speciesData.evolution_chain.url);
-    let evoData = await evoResponse.json();
-    responsePokeValuesJson.evoData = evoData;
-
-    // Filterbar
-    let response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0");
-    let data = await response.json();
-    allPokemonNames = data.results.map(p => p.name);
-
-    return responsePokeValuesJson;
-}
-
-
-
 async function loadAndRenderPokemons() {
     hideMorePokemonsButton();
     let contentRef = document.getElementById("content");
@@ -52,7 +28,7 @@ async function loadAndRenderPokemons() {
     contentRef.innerHTML = "";
 
     for (let index = 0; index < actualCountOffHowManyPokemonsAreBeenShownOnThePage; index++) {
-        let pokeObject = await fetchAndEnrichPokemonData(pokeID);
+        await fetchAndEnrichPokemonData(pokeID);
         showLoadingSpinner();
         renderAllPokemons(pokeID);
         hideLoadingSpinner();
@@ -60,6 +36,15 @@ async function loadAndRenderPokemons() {
         typeEmblemID = typeEmblemID.slice(0, -1) + pokeID;
     }
     showMorePokemonsButton();
+}
+
+
+async function fetchAndEnrichPokemonData(pokeID) {
+    let responsePokeValues = await fetch(pickUrl + pokeID);
+    let responsePokeValuesJson = await responsePokeValues.json();
+    window.pokemons[responsePokeValuesJson.id] = responsePokeValuesJson;
+
+   
 }
 
 

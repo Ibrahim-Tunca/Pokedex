@@ -25,28 +25,6 @@ function checkIfMoreThanOneType(inputArray){
 }
 
 
-function filterAndRenderPokemons(){
-    document.querySelector('input[type="text"]').addEventListener('input', async function(e) {
-        if(e.target.value.length < 2){render();}
-        if (e.target.value.length > 2) {
-            let search = e.target.value.toLowerCase();
-            let filteredNames = allPokemonNames.filter(name => name.includes(search));
-            let contentRef = document.getElementById("content");
-            contentRef.innerHTML = "";
-            for (let name of filteredNames) {
-                let pokeObject = window.pokemons.find(p => p && p.name === name);
-                if (!pokeObject) {
-                    let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-                    pokeObject = await response.json();
-                    window.pokemons[pokeObject.id] = pokeObject;
-                }
-                contentRef.innerHTML += getPokeValues(pokeObject.id, pokeObject.name, pokeObject.types, pokeObject.types[0].type.name, pokeObject.sprites.front_default);
-            }
-        }
-    });
-}
-
-
 async function renderMorePokemons(){
     hideMorePokemonsButton()
     actualCountOffHowManyPokemonsAreBeenShownOnThePage += 20;
@@ -76,7 +54,7 @@ function showNextPokemon(inputPokeID){
         inputPokeID = actualCountOffHowManyPokemonsAreBeenShownOnThePage;
     }
     toggleOverlay();
-    renderOverlay(inputPokeID)    
+    renderOverlay(inputPokeID);    
 }
 
 
@@ -86,6 +64,6 @@ function showPrevPokemon(inputPokeID){
         inputPokeID = 1;
     }
     toggleOverlay();
-    renderOverlay(inputPokeID)
+    renderOverlay(inputPokeID);
 }
 

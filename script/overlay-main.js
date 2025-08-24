@@ -5,6 +5,7 @@ function getOverlayMainValues(inputID){
     pokeExpirience = pokeObject.base_experience;
     pokeAbilities = pokeObject.abilities;
 
+
     let contentRef = document.getElementById("buttonOutputID");
     
     contentRef.innerHTML = getMainValues(pokeHeight, pokeWeight, pokeExpirience, pokeAbilities);
