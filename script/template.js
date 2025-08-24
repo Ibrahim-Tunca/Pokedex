@@ -21,7 +21,7 @@ function getOverlayContent(inputPokeID, inputPokeName, inputPokeTypeArray, input
     return `
                             
 
-                                <div class="card ${inputPokeTypeName} centered-overlay-content">
+                                <div class="card-overlay ${inputPokeTypeName} centered-overlay-content">
 
                                 
 
@@ -191,7 +191,7 @@ function getStats(inputHP, inputAttack, inputDefense, InputSpecialAttack, inputS
     return ` 
            
               <div>
-                  <div class="card ${inputType}" style="width: 7rem;">
+                  <div class="card-mini ${inputType}">
                   <h5 class="card-title margin-null">${inputName}</h5>
                   <img src="${inputIMG}" class="card-img-top" alt="poke-pic.png">
                   </div>

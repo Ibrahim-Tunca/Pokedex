@@ -24,7 +24,6 @@ function loadUnloadedPokemons(inputChain){
 async function searchPokeId(inputName){
     const pokeAPI = window.pokemons;
     let actualID = null;
-
     for(let i = 1; i < pokeAPI.length; i++){
         if(pokeAPI[i] && inputName == pokeAPI[i].name){
             actualID = i;

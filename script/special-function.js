@@ -9,7 +9,7 @@ function hideLoadingSpinner() {
 
 
 function showLoadingSpinner() {
-    contentRef = document.getElementById('loading').style.display = 'flex';
+    contentRef = document.getElementById('loading').style.display = 'block';
 }
    
 
@@ -27,6 +27,7 @@ function checkIfMoreThanOneType(inputArray){
 
 function filterAndRenderPokemons(){
     document.querySelector('input[type="text"]').addEventListener('input', async function(e) {
+        if(e.target.value.length < 2){render();}
         if (e.target.value.length > 2) {
             let search = e.target.value.toLowerCase();
             let filteredNames = allPokemonNames.filter(name => name.includes(search));
@@ -48,15 +49,14 @@ function filterAndRenderPokemons(){
 
 async function renderMorePokemons(){
     hideMorePokemonsButton()
-    actualCountOffHowManyPokemonsAreBeenShownOnThePage += 9;
-    console.log("actualCountOffHowManyPokemonsAreBeenShownOnThePage: " + actualCountOffHowManyPokemonsAreBeenShownOnThePage);
-    
+    actualCountOffHowManyPokemonsAreBeenShownOnThePage += 20;
 
     showLoadingSpinner();
     await loadAndRenderPokemons();
     hideLoadingSpinner();
     showMorePokemonsButton()
 }
+
 
 function hideMorePokemonsButton(){
     let contentRef = document.getElementById("morePokemonID");
@@ -70,7 +70,7 @@ function showMorePokemonsButton(){
 }
 
 
- function showNextPokemon(inputPokeID){
+function showNextPokemon(inputPokeID){
     inputPokeID++;
     if(inputPokeID > actualCountOffHowManyPokemonsAreBeenShownOnThePage){
         inputPokeID = actualCountOffHowManyPokemonsAreBeenShownOnThePage;
@@ -80,7 +80,7 @@ function showMorePokemonsButton(){
 }
 
 
- function showPrevPokemon(inputPokeID){
+function showPrevPokemon(inputPokeID){
     inputPokeID--;
     if(inputPokeID < 1){
         inputPokeID = 1;

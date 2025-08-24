@@ -9,15 +9,20 @@
     z-index: 2;
 }
 
+.card-overlay{
+    margin: 20px;
+    border-radius: 5px;
+    z-index: 3;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 26rem;
+}
+
 .centered-overlay-content {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    max-width: 28rem;
 }
 
 .card-title-extended {
@@ -55,7 +60,7 @@
 
 .stats-div{
     padding: 15px;
-    background-color: rgb(212, 81, 81);
+    background-color: #dc3545;
 }
 
 .table {
@@ -71,9 +76,10 @@
 }
 
 .evoChain-card-order{
-    background-color: #f5e872;
+    background-color: #ffc107;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 20px 10px 20px 10px;
 }

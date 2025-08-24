@@ -19,8 +19,6 @@ function toggleOverlay(){
 }
 
 
-
-
 function showActualpokeCardTab(overlayButtonCase, inputPokeID){
         switch (overlayButtonCase){
             case 1:

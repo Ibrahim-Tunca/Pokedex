@@ -1,0 +1,7 @@
+.card-mini{
+    padding: 1px;
+    margin: 5px;
+    border-radius: 3px;
+    z-index: 0;
+    width: 7rem;
+}
