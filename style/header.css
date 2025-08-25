@@ -2,11 +2,18 @@ header{
     background-color: #f5e872;
     padding: 20px;
 
+    
+}
+
+.header-content-border{
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     text-align: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .pokeballIcon{

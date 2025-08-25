@@ -30,11 +30,13 @@
 <body onload="render()">
 
      <header>
-        <img class="pokeballIcon" src="./.gitignore/img/pokeball.png" alt="pokeball.png">
-
-        <div>
-            <div class="input-group mb-3">
-                <input type="text" id="searchBarID" class="form-control" onkeyup="filterAndRenderPokemons()" placeholder="Search Pokemon" aria-label="Recipient’s username" aria-describedby="button-addon2">
+        <div class="header-content-border">
+            <img class="pokeballIcon" src="./.gitignore/img/pokeball.png" alt="pokeball.png">
+            <div>
+                <div class="input-group mb-3">
+                    <input type="text" id="searchBarID" class="form-control" onkeyup="checkCharLenght()" placeholder="Search Pokemon" aria-label="Recipient’s username" aria-describedby="button-addon2">
+                </div>
+            </div>
         </div>
     </header>
 
@@ -44,7 +46,7 @@
     
    
 
-    <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+    <div class="headline">
         <h1  class="yellow-font">Pokedex</h1>
     </div>
 
@@ -80,17 +82,19 @@
     </div>
 
      <footer>
-        <div class="footer-content ">
-            <div>
-                <a href="" class="footer-link">contact</a>
-                <a class="footer-link">|</a>
-                <a href="" class="footer-link">impressum</a>
+        <div class="footer-content-border">
+            <div class="footer-content">
+                <div>
+                    <a href="" class="footer-link">contact</a>
+                    <a class="footer-link">|</a>
+                    <a href="" class="footer-link">impressum</a>
+                </div>
             </div>
-        </div>
-            <div>
-                <img class="social-media-icons" src="./.gitignore/img/icons/social-media/instagram.png" alt="instagram">
-                <img class="social-media-icons" src="./.gitignore/img/icons/social-media/facebook.png" alt="facebook">
-                <img class="social-media-icons" src="./.gitignore/img/icons/social-media/youtube.png" alt="youtube">
+                <div>
+                    <img class="social-media-icons" src="./.gitignore/img/icons/social-media/instagram.png" alt="instagram">
+                    <img class="social-media-icons" src="./.gitignore/img/icons/social-media/facebook.png" alt="facebook">
+                    <img class="social-media-icons" src="./.gitignore/img/icons/social-media/youtube.png" alt="youtube">
+                </div>
             </div>
         </div>
     </footer>

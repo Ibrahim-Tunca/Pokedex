@@ -1,6 +1,9 @@
 body{
     background-color: rgb(212, 81, 81);
     color: white;
+    min-height: 100vh;
+    display: flex; 
+    flex-direction: column;
 }
 
 
@@ -28,6 +31,15 @@ h2{
     width: 100%;
 }
 
+.headline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+
 
 .yellow-font{
     color: #f5e872;
@@ -37,6 +49,7 @@ h2{
     max-width: 1440px;
     margin: 0 auto;
     width: 100%;
+    flex: 1;
 }
 
 .loading{

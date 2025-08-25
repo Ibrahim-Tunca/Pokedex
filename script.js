@@ -14,7 +14,6 @@ window.pokemons = [];
 //this is only reqired for the filter bar function
 let allPokemonNames = [];
 
-
 function render(){
     loadAndRenderPokemons();
 }
