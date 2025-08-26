@@ -26,14 +26,28 @@ async function loadAndRenderPokemons() {
     pokeID = 1;
     contentRef.innerHTML = "";
 
+    let pokeid = [];
+    let promises = [];
+
+
     for (let index = 0; index < actualCountOffHowManyPokemonsAreBeenShownOnThePage; index++) {
-        await fetchAndEnrichPokemonData(pokeID);
+        pokeid.push(pokeID);
+        promises.push(fetchAndEnrichPokemonData(pokeID));
+
+
+
         showLoadingSpinner();
         renderAllPokemons(pokeID);
         hideLoadingSpinner();
         pokeID++;
         typeEmblemID = typeEmblemID.slice(0, -1) + pokeID;
     }
+    await Promise.all(promises);
+    for(let id in pokeid){
+        renderAllPokemons(id);
+    }
+
+
     showMorePokemonsButton();
 }
 

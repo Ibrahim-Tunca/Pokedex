@@ -28,11 +28,11 @@ function checkIfMoreThanOneType(inputArray){
 async function renderMorePokemons(){
     hideMorePokemonsButton()
     actualCountOffHowManyPokemonsAreBeenShownOnThePage += 20;
-
     showLoadingSpinner();
     await loadAndRenderPokemons();
     hideLoadingSpinner();
     showMorePokemonsButton()
+    
 }
 
 
